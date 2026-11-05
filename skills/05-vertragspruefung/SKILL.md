@@ -1,3 +1,9 @@
+---
+name: vertragspruefung
+description: >-
+  Prüft Verträge, AGB und Klauseln systematisch nach deutschem Recht (§§ 305–310 BGB) mit Bewertung je Klausel. Nutzen bei Vertragsentwürfen und AGB.
+---
+
 # Skill: Vertragsprüfung (05)
 
 Ziel: Verträge, AGB und Klauseln systematisch prüfen.
