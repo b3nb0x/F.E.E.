@@ -52,6 +52,27 @@ git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.cla
 /plugin install b3nb0x/F.E.E.---Fully-Examine-Everything
 ```
 
+### llama.cpp / lokale Modelle (Nobara, Ubuntu, …)
+
+llama.cpp hat kein eigenes Plugin-System, aber einen OpenAI-kompatiblen Server. Kombiniere ihn mit Hermes (oder einem anderen Agenten), um F.E.E. auf dem eigenen, lokalen Modell zu nutzen:
+
+```bash
+# 1. llama.cpp-Server starten (llama-server, OpenAI-kompatibel)
+./llama-server -m <modell>.gguf --port 8080
+
+# 2. Hermes installieren und lokalen Endpoint als Provider einrichten
+hermes model   # Custom/OpenAI-compatible: http://localhost:8080/v1
+
+# 3. F.E.E. installieren (siehe Abschnitt Hermes Agent oben)
+```
+
+Ohne Agenten-Framework kannst du F.E.E. auch direkt als Kontext laden – ohne Memory und automatische Skill-Auswahl:
+
+```bash
+cat AGENTS.md skills/*/SKILL.md > /tmp/fee-context.md
+./llama-cli -m <modell>.gguf --system-prompt-file /tmp/fee-context.md
+```
+
 ### Codex / Cursor / OpenCode / generisch
 
 ```bash
