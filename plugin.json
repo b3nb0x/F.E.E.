@@ -1,0 +1,6 @@
+{
+  "name": "F.E.E. – Fully Examine Everything",
+  "version": "0.1.0",
+  "description": "Rechts-Addon für Agenten: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten und Vorabberatung im deutschen Recht – als Skills, Instincts und Memory, ECC-inspiriert.",
+  "skills": ["skills/01-gesetze-recherche", "skills/02-rechtsprechung", "skills/03-verfahren", "skills/04-vorabberatung", "skills/05-vertragspruefung", "skills/06-urteilsanalyse"]
+}
