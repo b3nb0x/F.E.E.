@@ -26,6 +26,7 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
   - `12-website-recon` – passive Website-Reconnaissance (Whois, DNS, SSL, Header) mit Bericht
   - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
   - `14-mandatsverwaltung` – Multimandaten-Fähigkeit: getrennte Mandatsordner, zentrales Register, mandatsübergreifende Fristen-Sicht, strikte Mandatstrennung
+  - `15-fee` – Universeller Einstieg mit Auto-Routing (`/fee`) – ordnet jede Anfrage selbst zu
 - **Commands** (direkt aufrufbar)
   - `/fee <anliegen>` – **Universeller Einstieg:** ordnet die Anfrage selbst zu und wählt den passenden Skill (Auto-Routing über alle 15 Skills)
   - `/recht <frage>` – Normrecherche mit Fundstellen
