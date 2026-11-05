@@ -1,3 +1,9 @@
+---
+name: urteilsanalyse
+description: >-
+  Analysiert konkrete deutsche Gerichtsentscheidungen systematisch (Tenor, Leitsätze, tragende Gründe, Einordnung). Nutzen bei vorliegenden Urteilen.
+---
+
 # Skill: Urteilsanalyse (06)
 
 Ziel: Eine konkrete Entscheidung systematisch auswerten (z. B. vom Nutzer als PDF/Text geliefert oder recherchiert).

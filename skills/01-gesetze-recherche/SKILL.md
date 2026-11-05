@@ -1,3 +1,9 @@
+---
+name: gesetze-recherche
+description: >-
+  Recherchiert einschlägige deutsche Gesetze und Normen (BGB, StGB, SGB, AO u. v. m.) in aktueller Fassung und bereitet sie zitierfähig auf. Nutzen bei Fragen nach Gesetzeslage, Normtext oder Auslegung.
+---
+
 # Skill: Gesetze-Recherche (01)
 
 Ziel: Die einschlägige Norm auffinden, in aktueller Fassung wiedergeben und zitierfähig aufbereiten.
