@@ -15,9 +15,9 @@ Halte den persistenten Dokument-Index der User-Library-Bibliotheken aktuell und 
 Knowledge-Topic **bibliothek-index** (`/home/user/knowledge/bibliothek-index/`):
 
 * `KNOWLEDGE.md` — Bibliotheks-Tabelle, Suchreihenfolge, Aktualisierungs-Workflow, Bild-Dokument-Workflow.
-* `sertop-ra.md` — 212 Doks, Bibliothek "Sertop RA" (Verfahrensakten).
-* `ra-sertop-bewerbung.md` — 87 Doks, Bibliothek "RA Sertop Bewerbung" (§ 11 KSchG / § 615 BGB).
-  Je Zeile: `**Dateiname** (Typ, Größe) — Auto-Summary · doclib-URI`, alphabetisch sortiert.
+* `mandat-alpha.md` — Beispiel: 212 Doks, Bibliothek „Mandat Alpha“ (Verfahrensakten).
+* `mandat-beta.md` — Beispiel: 87 Doks, Bibliothek „Mandat Beta“ (z. B. Entgeltfortzahlung / Annahmeverzug).
+  Je Zeile: `**Dateiname** (Typ, Größe) — Auto-Summary · doclib-URI`, alphabetisch sortiert. Bibliotheksnamen und -zahlen sind Platzhalter — im Einsatz die tatsächlichen Mandats-Bibliotheken eintragen.
 
 ## Suche (immer diese Reihenfolge)
 
@@ -50,5 +50,5 @@ Auslöser: Nutzer meldet neue Uploads in eine Bibliothek, oder `library_list_doc
 * Vor jedem `userLibrary`-Aufruf: Skill laden, Funktionen via Funktionssuche entdecken; Aufrufe immer auf die Ziel-Bibliothek scopen (`uri` = volle `doclib://…`-URI).
 * doclib-URIs nie selbst zusammenbauen, immer kopieren.
 * Dokumente in Antworten als Markdown-Link mit ihrer doclib-URI zitieren.
-* Inhaltliche Fallauswertung gehört nicht in den Index, sondern in die Fall-Topics (Sertop-Verfahren etc.) — der Index bleibt reines Findemittel.
+* Inhaltliche Fallauswertung gehört nicht in den Index, sondern in die Mandats-Topics (→ Skill `14-mandatsverwaltung`) — der Index bleibt reines Findemittel.
 * Sprache: Sprache des Nutzers (Default Deutsch).
