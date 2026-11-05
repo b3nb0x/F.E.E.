@@ -1,5 +1,9 @@
 # F.E.E. – Fully Examine Everything
 
+<p align="center">
+  <img src="assets/banner.svg" alt="F.E.E. – Paragraph gegen Richterhammer im Showdown" width="720">
+</p>
+
 Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.com/affaan-m/ECC), spezialisiert auf **deutsches Recht**: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten und Vorabberatung.
 
 > ⚠️ **Wichtiger Hinweis:** F.E.E. ist ein Recherche- und Analyse-Werkzeug. Es ersetzt keine Rechtsberatung im Sinne des RDG. Alle Ausgaben sind unverbindliche Informationen und Orientierung – keine verbindliche Rechtsauskunft.
