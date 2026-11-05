@@ -7,6 +7,7 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
 ## Was F.E.E. mitbringt
 
 - **Skills** (Recherche-Ablaufpläne für den Agenten)
+  - `00-rechtsanwalt-grundwissen` – Master-Workflow: Wirtschafts-, Straf-, Arbeits- und Sozialrecht (Sachverhaltsklärung, Analyse, Antwortvorlage, Fristen-/Kostendatenbank)
   - `01-gesetze-recherche` – Gesetze und Normen auffinden und zitierfähig aufbereiten (BGB, StGB, SGB, AO u. v. m.)
   - `02-rechtsprechung` – Rechtsprechung recherchieren: BGH, BVerfG, BVerwG, BFH, BAG, BSG, EuGH, OLGs/LGs
   - `03-verfahren` – Verfahrensarten und -abläufe: ZPO, StPO, VwGO, SGG, FGO, FamFG, Instanzenzüge, Fristen
