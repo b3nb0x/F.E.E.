@@ -8,4 +8,4 @@ Ablauf (Skill 01-gesetze-recherche):
 3. Zitierfähige Ausgabe: `§ … Abs. … S. … <Gesetz>` + Kernaussage
 4. Verweisungen auf angrenzende Normen
 5. Relevante Rechtsprechung (BGH zuerst) mit Aktenzeichen
-6. Enden mit dem Standard-Haftungshinweis
+6. **Letzte Zeile der Antwort ist immer wörtlich der Haftungshinweis aus `security/hinweise.md` – niemals weglassen**

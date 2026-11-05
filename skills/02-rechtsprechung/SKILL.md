@@ -1,7 +1,7 @@
 ---
 name: rechtsprechung
 description: >-
-  Recherchiert und verifiziert deutsche Rechtsprechung (BGH, BVerfG, BVerwG, BFH, BAG, BSG, EuGH, OLG) mit Aktenzeichen und Fundstelle. Nutzen bei Fragen nach Urteilen oder gefestigter Rechtsprechung.
+  Recherchiert und verifiziert deutsche Rechtsprechung (BGH, BVerfG, BVerwG, BFH, BAG, BSG, EuGH, OLG) mit Aktenzeichen und Fundstelle. Nutzen bei Fragen nach Urteilen, Aktenzeichen oder gefestigter Rechtsprechung – bei reinen Gesetzes-/Normfragen zuerst Skill 01-gesetze-recherche.
 ---
 
 # Skill: Rechtsprechung (02)

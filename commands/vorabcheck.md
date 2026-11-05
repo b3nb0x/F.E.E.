@@ -9,4 +9,4 @@ Ablauf (Skill 04, Gutachtenstil):
 4. Rechtsprechung (BGH → OLG) einbeziehen
 5. Prognose: „eher ja / eher nein / offen" mit Begründung und Gegenrisiken
 6. Handlungsoptionen mit Fristen-Warnhinweis
-7. **Pflicht:** mit dem Standard-Haftungshinweis enden (security/hinweise.md)
+7. **Pflicht:** Die letzte Zeile der Antwort ist immer wörtlich der Haftungshinweis aus `security/hinweise.md` – niemals weglassen
