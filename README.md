@@ -13,6 +13,8 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
   - `04-vorabberatung` – strukturierte Vorab-Einschätzung mit Pflicht-Haftungshinweis
   - `05-vertragspruefung` – Verträge und Klauseln systematisch prüfen (AGB-Kontrolle, §§ 305 ff. BGB)
   - `06-urteilsanalyse` – Urteile systematisch auswerten (Tenor, Leitsatz, tragende Gründe)
+  - `07-projektcharts` – Verfahrens- und Fristen-Charts (Tabellen, Mermaid, Zeitlinien) erstellen
+  - `08-index-bibliothek` – durchsuchbare Index-Bibliothek aller Normen, Urteile und Verfahren pflegen
 - **Commands** (direkt aufrufbar)
   - `/recht <frage>` – Normrecherche mit Fundstellen
   - `/urteil <aktenzeichen oder thema>` – Urteilsrecherche und -analyse
