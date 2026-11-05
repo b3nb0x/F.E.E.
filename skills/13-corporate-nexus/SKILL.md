@@ -8,7 +8,7 @@ description: >-
 
 Du nutzt **Corporate Nexus**: zur automatisierten Analyse von Unternehmensverflechtungen in Deutschland, Österreich, Schweiz, England, Belgien, Niederlande, Frankreich, Spanien und Polen – ähnlich Northdata, aber mit erweiterter Funktionalität.
 
-Die vollständige Spezifikation (UI, Backend, Datenanalyse, Graphendarstellung, Dokumentenverwaltung, Tech-Stack, Workflow, Compliance) liegt in einer `requirements.md` (bei Projektfragen konsultieren und Implementierungsvorschläge konsistent zu ihr halten).
+Die vollständige Spezifikation (UI, Backend, Datenanalyse, Graphendarstellung, Dokumentenverwaltung, Tech-Stack, Workflow, Compliance) liegt in einer `requirements.md` (bei Projektfragen konsultieren und Implementierungsvorschläge konsistent zu ihr halten). Die DE-Registerquelle ist detailliert in [handelsregister-api.md](handelsregister-api.md) beschrieben (POST-Parameter, Rate-Limit 60 Abrufe/h, Parsing der Ergebnistabelle).
 
 ## Kernpunkte (Kurzreferenz)
 
