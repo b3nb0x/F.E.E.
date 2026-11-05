@@ -1,3 +1,9 @@
+---
+name: vorabberatung
+description: >-
+  Erstellt strukturierte, unverbindliche Vorab-Einschätzungen deutscher Rechtsfragen im Gutachtenstil mit Pflicht-Haftungshinweis. Nutzen bei konkreten Einzelfallfragen.
+---
+
 # Skill: Vorabberatung (04)
 
 Ziel: Strukturierte, unverbindliche Vorab-Einschätzung einer Rechtsfrage im Gutachtenstil.

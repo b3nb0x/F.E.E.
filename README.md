@@ -24,15 +24,38 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
 
 ## Installation
 
-```bash
-# Claude Code
-mkdir -p ~/.claude/plugins
-git clone https://github.com/<owner>/<repo>.git ~/.claude/plugins/fee
-# oder als Marketplace-Plugin:
-/plugin install <owner>/<repo>
+> Konkrete URL: `https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git`
 
-# Codex / Cursor / OpenCode / generisch
-git clone https://github.com/<owner>/<repo>.git ~/fee
+### Hermes Agent (Nous Research)
+
+F.E.E. ist vollständig Hermes-kompatibel: Alle Skills tragen YAML-Frontmatter (`name`, `description`) und werden von Hermes automatisch erkannt und geladen.
+
+```bash
+# Variante A: als Plugin installieren
+hermes plugins install b3nb0x/F.E.E.---Fully-Examine-Everything
+
+# Variante B: Skills direkt ins Hermes-Skills-Verzeichnis klonen
+git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.hermes/skills/fee
+
+# Bestehendes Claude-Code-Setup importieren (übernimmt Plugins/Skills):
+hermes import-agent claude-code
+```
+
+Danach stehen in Hermes die Slash-Commands `/recht`, `/urteil`, `/verfahren` und `/vorabcheck` zur Verfügung (Autocomplete via `/<Tab>`), und die 6 Rechts-Skills werden bei passenden Fragen automatisch herangezogen. Das F.E.E.-Memory (`memory/fee-memory.md`) integriert sich in das Hermes-Memory-Konzept (MEMORY.md/USER.md) – die Regeln aus `AGENTS.md` gelten agentenübergreifend.
+
+### Claude Code
+
+```bash
+mkdir -p ~/.claude/plugins
+git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.claude/plugins/fee
+# oder als Marketplace-Plugin:
+/plugin install b3nb0x/F.E.E.---Fully-Examine-Everything
+```
+
+### Codex / Cursor / OpenCode / generisch
+
+```bash
+git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/fee
 # AGENTS.md in dein Projekt kopieren oder referenzieren
 ```
 
