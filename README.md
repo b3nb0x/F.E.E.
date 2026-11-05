@@ -13,6 +13,13 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
   - `04-vorabberatung` – strukturierte Vorab-Einschätzung mit Pflicht-Haftungshinweis
   - `05-vertragspruefung` – Verträge und Klauseln systematisch prüfen (AGB-Kontrolle, §§ 305 ff. BGB)
   - `06-urteilsanalyse` – Urteile systematisch auswerten (Tenor, Leitsatz, tragende Gründe)
+  - `07-projektcharts` – Verfahrens- und Fristen-Charts (Tabellen, Mermaid, Zeitlinien) erstellen
+  - `08-bibliothek-index` – durchsuchbarer Index der Dokument-Bibliotheken als erste Suchinstanz
+  - `09-leak-recherche` – passive Prüfung eigener Identitäten in Breaches (Clearnet-Aggregatoren, nur eigene Daten)
+  - `10-name-recherche` – strukturierte Online-Recherche zu Personen/Firmen mit 2-Quellen-Verifikation
+  - `11-mail-reachability-check` – passive DNS-Prüfung, ob eine Domain Mails empfangen/versenden kann
+  - `12-website-recon` – passive Website-Reconnaissance (Whois, DNS, SSL, Header) mit Bericht
+  - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
 - **Commands** (direkt aufrufbar)
   - `/recht <frage>` – Normrecherche mit Fundstellen
   - `/urteil <aktenzeichen oder thema>` – Urteilsrecherche und -analyse
