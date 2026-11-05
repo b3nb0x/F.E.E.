@@ -1,3 +1,9 @@
+---
+name: verfahren
+description: >-
+  Bestimmt Rechtsweg, zuständiges Gericht, Verfahrensablauf, Fristen und Kostenrisiko im deutschen Prozessrecht (ZPO, StPO, VwGO, SGG, FGO, ArbGG). Nutzen bei Verfahrensfragen.
+---
+
 # Skill: Verfahren (03)
 
 Ziel: Verfahrensfragen klären – Rechtsweg, Zuständigkeit, Ablauf, Fristen, Kosten.
