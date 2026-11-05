@@ -27,6 +27,7 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
   - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
   - `14-mandatsverwaltung` – Multimandaten-Fähigkeit: getrennte Mandatsordner, zentrales Register, mandatsübergreifende Fristen-Sicht, strikte Mandatstrennung
 - **Commands** (direkt aufrufbar)
+  - `/fee <anliegen>` – **Universeller Einstieg:** ordnet die Anfrage selbst zu und wählt den passenden Skill (Auto-Routing über alle 15 Skills)
   - `/recht <frage>` – Normrecherche mit Fundstellen
   - `/urteil <aktenzeichen oder thema>` – Urteilsrecherche und -analyse
   - `/verfahren <lage>` – Verfahrensweg, Zuständigkeit, Fristen
