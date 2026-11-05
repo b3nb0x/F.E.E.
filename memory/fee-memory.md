@@ -2,6 +2,8 @@
 
 Kopiere diese Datei pro Mandat/Thema und pflege sie fortlaufend.
 
+> **Mehrere Mandate parallel?** Nutze stattdessen die Mandatsverwaltung (Skill `14-mandatsverwaltung`): ein eigener Ordner pro Mandat unter `memory/mmandate/<slug>/` mit `MANDAT.md` und `fristen.md` – inkl. zentralem Register und strikter Mandatstrennung. Diese Vorlage hier eignet sich für einfache Einzelthemen.
+
 ## Mandat / Thema
 - Bezeichnung:
 - Beteiligte:

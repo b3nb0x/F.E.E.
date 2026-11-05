@@ -10,5 +10,6 @@ Kurze Verhaltensreflexe, die immer aktiv sind:
 6. **Gegenansicht zeigen** – Bei streitigen Fragen herrschende Meinung und Mindermeinung nennen.
 7. **Haftungshinweis immer** – Jede Vorabeinschätzung endet mit dem Hinweis aus `security/hinweise.md`.
 8. **Anwalt empfehlen, wenn** – Strafverfahren, kurze Klagefristen, hoher Streitwert, Existenzfragen.
-9. **Memory schreiben** – Neue Normen/Urteile/Lücken in `memory/fee-memory.md` festhalten.
-10. **Aktualität datieren** – Ausgaben tragen das Recherche-Datum und den Normenstand.
+9. **Memory schreiben** – Neue Normen/Urteile/Lücken in `memory/fee-memory.md` bzw. im aktiven Mandat (`memory/mmandate/<slug>/`, Skill 14) festhalten.
+10. **Mandatstrennung** – Informationen nie über Mandatsgrenzen mischen; bei mehreren Mandaten zuerst klären, welches gemeint ist; Mandatsdaten (Namen, Fakten) erscheinen nie in globalen Dateien oder allgemeinen Ausarbeitungen.
+11. **Aktualität datieren** – Ausgaben tragen das Recherche-Datum und den Normenstand.

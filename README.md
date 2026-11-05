@@ -25,11 +25,13 @@ Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.co
   - `11-mail-reachability-check` – passive DNS-Prüfung, ob eine Domain Mails empfangen/versenden kann
   - `12-website-recon` – passive Website-Reconnaissance (Whois, DNS, SSL, Header) mit Bericht
   - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
+  - `14-mandatsverwaltung` – Multimandaten-Fähigkeit: getrennte Mandatsordner, zentrales Register, mandatsübergreifende Fristen-Sicht, strikte Mandatstrennung
 - **Commands** (direkt aufrufbar)
   - `/recht <frage>` – Normrecherche mit Fundstellen
   - `/urteil <aktenzeichen oder thema>` – Urteilsrecherche und -analyse
   - `/verfahren <lage>` – Verfahrensweg, Zuständigkeit, Fristen
   - `/vorabcheck <sachverhalt>` – Vorabberatung mit Prüfstruktur
+  - `/mandant <liste|neu|wechsle|fristen|abschliessen>` – Mandatsverwaltung (Multimandate)
 - **Memory** – Sitzungsübergreifendes Gedächtnis (Mandate, Normen, offene Punkte)
 - **Instincts** – Verhaltensregeln: erst Norm, dann Auslegung, dann Rechtsprechung; immer aktuelles Datum prüfen
 - **Security** – RBAG/RDG-Grenzen, kein Rechtsrat, keine Fristenberechnung ohne Verifikation
