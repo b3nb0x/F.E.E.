@@ -28,7 +28,7 @@
 Öffne ein Terminal und führe aus:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E./main/install.sh | sh
 ```
 
 **Das macht der Installer automatisch:**
@@ -152,12 +152,12 @@ Falls du lieber von Hand installierst:
 
 **Hermes:**
 ```bash
-git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.hermes/skills/fee
+git clone https://github.com/b3nb0x/F.E.E..git ~/.hermes/skills/fee
 ```
 
 **Claude Code:**
 ```bash
-git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.claude/plugins/fee
+git clone https://github.com/b3nb0x/F.E.E..git ~/.claude/plugins/fee
 ```
 
 **llama.cpp / lokale Modelle:** llama.cpp hat kein Plugin-System, aber einen OpenAI-kompatiblen Server. Kombiniere ihn mit Hermes, um F.E.E. auf deinem eigenen, lokalen Modell zu nutzen:
@@ -170,7 +170,7 @@ hermes model                                      # 2. Endpoint http://localhost
 
 **Codex / Cursor / OpenCode / generisch:**
 ```bash
-git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/fee
+git clone https://github.com/b3nb0x/F.E.E..git ~/fee
 # AGENTS.md in dein Projekt kopieren oder referenzieren
 ```
 

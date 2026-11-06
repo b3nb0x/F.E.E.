@@ -3,7 +3,7 @@
 # Läuft mit sh und bash auf allen gängigen Distributionen (Ubuntu, Mint, Debian,
 # Fedora, RHEL, Arch, Manjaro, openSUSE, Nobara ...).
 #
-# Installation:  curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh
+# Installation:  curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E./main/install.sh | sh
 # Alternativ:    sh install.sh [--optionen]
 #
 # Optionen:
@@ -18,7 +18,7 @@
 
 set -eu
 
-REPO_URL="https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything"
+REPO_URL="https://github.com/b3nb0x/F.E.E."
 BRANCH="${FEE_BRANCH:-main}"
 TMPDIR_FEE="$(mktemp -d)"
 MANDATE_DIR="${FEE_MANDATE_DIR:-$HOME/FEE-Mandate}"
@@ -98,7 +98,7 @@ fetch_repo() {
         git clone --depth 1 -b "$BRANCH" "$REPO_URL" "$TMPDIR_FEE/repo"
     elif command -v curl >/dev/null 2>&1; then
         mkdir -p "$TMPDIR_FEE/repo"
-        curl -fsSL "https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything/archive/$BRANCH.tar.gz" \
+        curl -fsSL "https://github.com/b3nb0x/F.E.E./archive/$BRANCH.tar.gz" \
             | tar -xz --strip-components=1 -C "$TMPDIR_FEE/repo"
     else
         echo "!! Weder git noch curl gefunden. Bitte installieren (git oder curl)." >&2
