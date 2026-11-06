@@ -10,6 +10,8 @@ Ziel: Sauber getrennte, parallel bearbeitbare Mandate mit zentralem Register und
 
 ## Struktur
 
+### Variante A – Plugin-Memory (innerhalb des Agenten)
+
 ```
 memory/mmandate/
 ├── _registry.md          # zentrale Mandatsübersicht (alle Mandate, Status, nächste Frist)
@@ -18,6 +20,28 @@ memory/mmandate/
     ├── fristen.md         # alle Fristen dieses Mandats (⚠️ verifizieren)
     └── notizen/           # Arbeitsnotizen, Recherche-Ergebnisse zu DIESEM Mandat
 ```
+
+### Variante B – Mandanten-Ordner auf Dateisystem (Installer-Standard)
+
+Basisordner konfigurierbar (Installer-Option `--mandate-dir`, Standard `~/FEE-Mandate`, in `.fee-config` gespeichert). Ordnername: **Erstellungsdatum + Mandats-ID + Anzeigename**:
+
+```
+~/FEE-Mandate/
+└── 2026-11-06_M-001_Herr_Mustermann/      ← Datum & Mandats-ID & Anzeigename
+    ├── MANDAT.md          # Memory des Mandats (Vorlage: vorlage-mandat.md)
+    ├── fristen.md
+    ├── eingang/           # Original-Dokumente (unverändert)
+    ├── dokumente/        # OCR-Volltexte (→ Skill 16)
+    ├── notizen/
+    ├── 1_Mietrecht/                     ← Rechtsgebiet 1
+    └── 2_Arbeitsrecht/                   ← Rechtsgebiet 2
+        └── 2.2_Kuendigungsschutzklage/    ← Unterverfahren
+```
+
+- Nummerierte Unterordner pro Rechtsgebiet/Verfahren; weitere Ebenen als `2.2`, `2.3` … möglich.
+- Jeder Ordner gehört zu **genau einem** Mandanten – niemals vermischen.
+- Dokumente werden über Skill `16-dokumentenverarbeitung` aufgenommen (eingang/ → dokumente/).
+- Beide Varianten synchron halten: Registry-Eintrag verweist auf den Dateisystem-Ordner.
 
 ## Kernregeln (Mandatstrennung)
 
@@ -48,6 +72,21 @@ memory/mmandate/
 ### Mandat abschließen
 1. Status im `_registry.md` auf „abgeschlossen (Datum)" setzen; Verzeichnis **nicht** löschen.
 2. Abschlussvermerk in `MANDAT.md` (Ergebnis, Restpunkte, Aufbewahrung).
+
+### Mandate zusammenführen (mehrere Fälle → ein Mandat)
+
+Wenn mehrere Mandate zu einem zusammengelegt werden (z. B. drei getrennte Fälle desselben Mandanten):
+
+1. **Ziel klären:** Welches Mandat bleibt bestehen (oder neues Ziel-Mandat anlegen)? Nutzer bestätigen lassen.
+2. **Memory zusammenführen:** `MANDAT.md`-Inhalte der Quell-Mandate in die Ziel-`MANDAT.md` übernehmen – je Abschnitt (Sachverhalt, Beteiligte, Normen, Rechtsprechung, offene Punkte) mit Herkunfts-Kennzeichnung `[aus <slug>]`.
+3. **Fristen mergen:** Alle `fristen.md`-Zeilen in die Ziel-`fristen.md` übernehmen, Duplikate prüfen, je Zeile Herkunft notieren.
+4. **Ordner verschieben:** `eingang/`, `dokumente/`, `notizen/` und Rechtsgebiet-Ordner der Quell-Mandate in den Ziel-Ordner verschieben – bei Namenskollisionen Datum/Slug-Präfix vor den Dateinamen setzen (z. B. `2026-11-06_M-002_kuendigung.pdf`).
+5. **Registry aktualisieren:** Ziel-Mandat-Status `aktiv`; Quell-Mandate auf `zusammengeführt (Datum) → <ziel-slug>`.
+6. **Redirect hinterlassen:** In der Quell-`MANDAT.md` oben eintragen: „Zusammengeführt am <Datum> in <ziel-slug>" – Verzeichnis der Quellen **nicht** löschen (Nachvollziehbarkeit), bzw. nach Nutzerwunsch.
+7. **Index aktualisieren:** Dokument-Index (→ Skill 08) auf neue Pfade korrigieren.
+
+Regeln: Zusammenführung nur nach Bestätigung des Nutzers; nichts geht verloren (ersatzweise kopieren statt verschieben); Trennung zu **anderen** Mandaten bleibt bestehen.
+
 
 ## Datenschutz
 

@@ -8,5 +8,6 @@ Mögliche Aufrufe:
 - `/mandant wechsle <slug>` – aktives Mandat wechseln (MANDAT.md + fristen.md laden, offene Punkte des alten Mandats sichern)
 - `/mandant fristen` – mandatsübergreifende Fristen-Tabelle, nach Ablauf sortiert (⚠️ mit Warnhinweis)
 - `/mandant abschliessen <slug>` – Mandat abschließen (Registry-Status, Abschlussvermerk, Verzeichnis bleibt)
+- `/mandant merge <ziel> <quelle1> <quelle2> …` – Mandate zusammenführen (Memory- und Fristen-Merge, Ordner verschieben, Registry + Redirect, nur nach Bestätigung)
 
 Regeln (Skill 14): strikte Mandatstrennung – keine Informationen über Mandatsgrenzen; bei Mehrdeutigkeit nachfragen; Verzeichnis- und Registry-Einträge anonymisiert.
