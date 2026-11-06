@@ -4,151 +4,212 @@
   <img src="assets/banner.png" alt="F.E.E. – Paragraph gegen Richterhammer im epischen Showdown" width="720">
 </p>
 
-Rechts-Addon (Plugin) für KI-Agenten – spezialisiert auf **deutsches Recht**: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten und Vorabberatung.
+**F.E.E. ist ein Rechts-Addon für KI-Agenten** – spezialisiert auf deutsches Recht: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten, Vorabberatung, Mandatsverwaltung und Dokumentenverarbeitung.
 
-> ⚠️ **Wichtiger Hinweis:** F.E.E. ist ein Recherche- und Analyse-Werkzeug. Es ersetzt keine Rechtsberatung im Sinne des RDG. Alle Ausgaben sind unverbindliche Informationen und Orientierung – keine verbindliche Rechtsauskunft.
+> ⚠️ **Wichtiger Hinweis:** F.E.E. ist ein Recherche- und Analyse-Werkzeug. Es ersetzt **keine Rechtsberatung** im Sinne des RDG. Alle Ausgaben sind unverbindliche Informationen und Orientierung – keine verbindliche Rechtsauskunft. Jede Antwort des Agenten endet deshalb mit einem entsprechenden Hinweis.
 
-## Was F.E.E. mitbringt
+---
 
-- **Skills** (Recherche-Ablaufpläne für den Agenten)
-  - `00-rechtsanwalt-grundwissen` – Master-Workflow: Wirtschafts-, Straf-, Arbeits- und Sozialrecht (Sachverhaltsklärung, Analyse, Antwortvorlage, Fristen-/Kostendatenbank)
-  - `01-gesetze-recherche` – Gesetze und Normen auffinden und zitierfähig aufbereiten (BGB, StGB, SGB, AO u. v. m.)
-  - `02-rechtsprechung` – Rechtsprechung recherchieren: BGH, BVerfG, BVerwG, BFH, BAG, BSG, EuGH, OLGs/LGs
-  - `03-verfahren` – Verfahrensarten und -abläufe: ZPO, StPO, VwGO, SGG, FGO, FamFG, Instanzenzüge, Fristen
-  - `04-vorabberatung` – strukturierte Vorab-Einschätzung mit Pflicht-Haftungshinweis
-  - `05-vertragspruefung` – Verträge und Klauseln systematisch prüfen (AGB-Kontrolle, §§ 305 ff. BGB)
-  - `06-urteilsanalyse` – Urteile systematisch auswerten (Tenor, Leitsatz, tragende Gründe)
-  - `07-projektcharts` – Verfahrens- und Fristen-Charts (Tabellen, Mermaid, Zeitlinien) erstellen
-  - `08-bibliothek-index` – durchsuchbarer Index der Dokument-Bibliotheken als erste Suchinstanz
-  - `09-leak-recherche` – passive Prüfung eigener Identitäten in Breaches (Clearnet-Aggregatoren, nur eigene Daten)
-  - `10-name-recherche` – strukturierte Online-Recherche zu Personen/Firmen mit 2-Quellen-Verifikation
-  - `11-mail-reachability-check` – passive DNS-Prüfung, ob eine Domain Mails empfangen/versenden kann
-  - `12-website-recon` – passive Website-Reconnaissance (Whois, DNS, SSL, Header) mit Bericht
-  - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
-  - `14-mandatsverwaltung` – Multimandaten-Fähigkeit: getrennte Mandatsordner, zentrales Register, mandatsübergreifende Fristen-Sicht, strikte Mandatstrennung
-  - `15-fee` – Universeller Einstieg mit Auto-Routing (`/fee`) – ordnet jede Anfrage selbst zu
-  - `16-dokumentenverarbeitung` – Dokumenten-Aufnahme: OCR/Textextraktion (PDF, Word, Excel, LibreOffice, Bilder), Ablage im Mandanten-Ordner (`eingang/` Originale, `dokumente/` Volltexte), Index-Pflege
-- **Commands** (direkt aufrufbar)
-  - `/fee <anliegen>` – **Universeller Einstieg:** ordnet die Anfrage selbst zu und wählt den passenden Skill (Auto-Routing über alle 15 Skills)
-  - `/recht <frage>` – Normrecherche mit Fundstellen
-  - `/urteil <aktenzeichen oder thema>` – Urteilsrecherche und -analyse
-  - `/verfahren <lage>` – Verfahrensweg, Zuständigkeit, Fristen
-  - `/vorabcheck <sachverhalt>` – Vorabberatung mit Prüfstruktur
-  - `/mandant <liste|neu|wechsle|fristen|abschliessen>` – Mandatsverwaltung (Multimandate)
-- **Memory** – Sitzungsübergreifendes Gedächtnis (Mandate, Normen, offene Punkte)
-- **Instincts** – Verhaltensregeln: erst Norm, dann Auslegung, dann Rechtsprechung; immer aktuelles Datum prüfen
-- **Security** – RBAG/RDG-Grenzen, kein Rechtsrat, keine Fristenberechnung ohne Verifikation
+## 🤔 Für Einsteiger: Was ist das überhaupt?
 
-## Installation
+| Begriff | Einfach erklärt |
+|---|---|
+| **KI-Agent** | Ein Chat-Programm mit Fähigkeiten über das reine Schreiben hinaus – es kann im Internet recherchieren, Dateien lesen und Befehle ausführen. Beispiele: **Hermes**, **Claude Code**, **Codex**, **Vibe**. |
+| **Skill** | Eine Anleitung (Markdown-Datei), die dem Agenten beibringt, **wie** er eine bestimmte Aufgabe löst – z. B. „wie recherchiere ich ein BGH-Urteil korrekt". |
+| **Plugin / Addon** | Ein installierbares Paket, das dem Agenten neue Fähigkeiten (Skills, Befehle) hinzufügt. **F.E.E. ist genau das: ein Rechts-Plugin.** |
+| **Mandat** | Ein einzelner Fall/Auftrag (z. B. „Kündigungsschutzklage Herr Mustermann"). F.E.E. verwaltet mehrere Mandate getrennt – wie Aktenordner in einer Kanzlei. |
 
-### Ein Befehl (empfohlen – erkennt Distro & Agenten)
+**Concrete gesagt:** Du installierst F.E.E. einmal in deinen Agenten – und ab dann kannst du den Agenten fragen: *„Wie ist die Kündigungsfrist bei meiner Wohnung?"* oder *„Analysiere diese Kündigung!"* – und er antwortet wie ein gut vorbereiteter juristischer Assistent: mit Gesetzeszitaten, Urteilen, Fristen-Warnungen und klaren nächsten Schritten.
+
+---
+
+## 🚀 Installation (Ein Befehl)
+
+Öffne ein Terminal und führe aus:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh
 ```
 
-Der Installer (`install.sh`, reines POSIX-sh – läuft auf Ubuntu, Mint, Debian, Fedora, RHEL, Arch, Manjaro, openSUSE, Nobara):
-- **Distro-Erkennung** über `/etc/os-release` → passender Paketmanager (apt/dnf/zypper/pacman)
-- **Agent-Erkennung:** Hermes, Claude Code, Vibe, Codex, Cursor – installiert in alle gefundenen
-- **Mandanten-Ordner** anlegen (Standard `~/FEE-Mandate`, konfigurierbar via `--mandate-dir`)
-- Optionen: `--deps` (OCR-Werkzeuge: tesseract, poppler, libreoffice), `--update`, `--uninstall`, `--agent <name>`, `--list-agents`
+**Das macht der Installer automatisch:**
 
-```bash
-# OCR-/Dokumenten-Werkzeuge nachinstallieren (Distro-abhängig):
-curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh -s -- --deps
+1. **Erkennt dein Betriebssystem** (Ubuntu, Mint, Debian, Fedora, Nobara, Arch, openSUSE …) und passt die Befehle an
+2. **Erkennt deine Agenten** (Hermes, Claude Code, Vibe, Codex, Cursor) und installiert F.E.E. in alle gefundenen
+3. **Legt deinen Mandanten-Ordner an** (Standard: `~/FEE-Mandate` – dort landen später deine Fälle)
+
+**Kein Agent installiert?** Kein Problem – der Installer fragt dich, welchen du möchtest, und installiert ihn mit:
+
+```
+>> Kein Agent gefunden. Welchen möchtest du installieren?
+   1) Hermes Agent (Nous Research)
+   2) Claude Code (Anthropic)
+   3) Codex CLI (OpenAI)
+   4) Mistral Vibe Code
+   5) Cursor (Desktop-App)
+ Auswahl [1-5]:
 ```
 
-### Manuell
+**Alle Installer-Optionen:**
 
-> Konkrete URL: `https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git`
+| Befehl | Wirkung |
+|---|---|
+| `sh install.sh` | Normal: erkannte Agenten + Mandaten-Ordner |
+| `sh install.sh --deps` | Zusätzlich OCR-Werkzeuge (tesseract, poppler, LibreOffice) installieren – **nötig für die Dokumentenverarbeitung** |
+| `sh install.sh --agent hermes` | Nur für einen bestimmten Agenten installieren |
+| `sh install.sh --install-agent claude` | Diesen Agenten installieren + F.E.E. einrichten |
+| `sh install.sh --mandate-dir /pfad` | Anderen Ordner für deine Fälle festlegen |
+| `sh install.sh --update` | F.E.E. auf die neueste Version bringen |
+| `sh install.sh --uninstall` | F.E.E. entfernen (deine Fälle bleiben unangetastet) |
+| `sh install.sh --list-agents` | Nur zeigen, welche Agenten erkannt wurden |
 
-### Hermes Agent (Nous Research)
+> 💡 **Nach der Installation:** Agenten neu starten (Terminal zu und wieder auf), damit die neuen Skills geladen werden.
 
-F.E.E. ist vollständig Hermes-kompatibel: Alle Skills tragen YAML-Frontmatter (`name`, `description`) und werden von Hermes automatisch erkannt und geladen.
+---
 
+## 📁 Deine Fälle: der Mandanten-Ordner
+
+Jeder Fall bekommt seinen eigenen Ordner – wie eine physische Akte. Der Name besteht aus **Erstellungsdatum + Mandats-ID + Anzeigename**:
+
+```
+~/FEE-Mandate/
+└── 2026-11-06_M-001_Herr_Mustermann/
+    ├── MANDAT.md          ← das "Gedächtnis" des Falls (Sachverhalt, Beteiligte, Stand)
+    ├── fristen.md         ← alle Fristen dieses Falls (⚠️ immer anwaltlich verifizieren)
+    ├── eingang/           ← deine Original-Dokumente (Kündigung, Vertrag, …) – bleiben unverändert
+    ├── dokumente/         ← durchsuchbare Textversionen (automatisch per OCR erzeugt)
+    ├── notizen/           ← Arbeitsnotizen des Agenten
+    ├── 1_Mietrecht/       ← Rechtsgebiet 1
+    └── 2_Arbeitsrecht/    ← Rechtsgebiet 2
+        └── 2.2_Kuendigungsschutzklage/
+```
+
+**Warum mit Name im Ordnernamen?** Die Daten liegen nur auf deinem Rechner/Server – sichtbar nur für jemanden mit Zugriff (DSGVO-konform). So findest du jeden Fall sofort, ohne eine separate ID-Datenbank pflegen zu müssen.
+
+**Dokumente einbringen:** Lade sie einfach im Agenten hoch und sag z. B. *„Diese Kündigung zu Mandat M-001"*. Der Agent legt das Original in `eingang/` ab und erzeugt eine durchsuchbare Textfassung in `dokumente/` (PDFs – auch gescannte via OCR –, Word, Excel, LibreOffice, Bilder).
+
+**Mehrere Fälle zusammenlegen?** Drei getrennte Fälle desselben Mandanten können zu einem zusammengeführt werden: `/mandant merge <ziel> <quelle1> <quelle2>` – Gedächtnis, Fristen und Ordner werden sauber vereint, nichts geht verloren.
+
+---
+
+## 💬 So benutzt du F.E.E.
+
+**Der einfachste Weg – `/fee`:** Schreib einfach deine Frage, der Agent wählt selbst den richtigen Ablauf:
+
+```
+/fee Mein Vermieter hat gekündigt, ich bin seit 9 Jahren in der Wohnung – gilt die 9-Monats-Frist?
+```
+
+**Die Spezial-Befehle** (falls du einen Weg direkt erzwingen willst):
+
+| Befehl | Beispiel | Was passiert |
+|---|---|---|
+| `/fee <anliegen>` | `/fee Frage zur Kündigungsfrist` | Universeller Einstieg – wählt automatisch den passenden Ablauf |
+| `/recht <frage>` | `/recht Kündigungsfrist Wohnung § 573c BGB` | Sucht das Gesetz mit Fundstelle und aktueller Fassung |
+| `/urteil <was>` | `/urteil BGH VIII ZR 286/22` | Findet und analysiert das Urteil (Aktenzeichen, Leitsatz, Bedeutung) |
+| `/verfahren <lage>` | `/verfahren Nachbar will Schadensersatz wegen Baumschnitts` | Welches Gericht ist zuständig? Ablauf, Fristen, Kostenrisiko |
+| `/vorabcheck <fall>` | `/vorabcheck Arbeitgeber zahlt Überstunden nicht, seit 3 Monaten` | Strukturierte Ersteinschätzung im Gutachtenstil |
+| `/mandant …` | `/mandant neu` oder `/mandant fristen` | Fälle anlegen, wechseln, alle Fristen überblicken, zusammenführen |
+
+**Was du in jeder Antwort erwarten kannst:**
+
+1. Eine Klartext-Zusammenfassung
+2. Konkrete Gesetze (`§ 573c Abs. 1 BGB`) und – wo vorhanden – Urteile mit Aktenzeichen
+3. Ehrliche Risiken und offene Fragen (nicht nur „das wird klappen")
+4. Konkrete nächste Schritte mit Fristen-Hinweis
+5. **Am Ende immer:** der Hinweis, dass es keine anwaltliche Beratung ersetzt
+
+---
+
+## 📚 Was F.E.E. kann (die 17 Skills im Überblick)
+
+**Recht (Kern):**
+- **Grundwissen & Master-Workflow** – Wirtschafts-, Straf-, Arbeits- und Sozialrecht systematisch
+- **Gesetze recherchieren** – amtliche Quellen (gesetze-im-internet.de), zitierfähig mit Stand
+- **Rechtsprechung** – BGH, BVerwG, BFH, BAG, BSG, BVerfG, EuGH; nur verifizierte Aktenzeichen
+- **Verfahren** – Rechtsweg, zuständiges Gericht, Fristen, Kosten, Alternativen
+- **Vorabberatung** – Ersteinschätzung im Gutachtenstil
+- **Vertragsprüfung** – AGB-Kontrolle (§§ 305 ff. BGB), Klausel-Bewertung
+- **Urteilsanalyse** – Tenor, Leitsätze, tragende Gründe, Einordnung
+
+**Organisation:**
+- **Mandatsverwaltung** – mehrere Fälle getrennt, Fristen über alle Fälle hinweg, Zusammenführen
+- **Dokumentenverarbeitung** – OCR für PDFs/Scans/Word/Excel/Bilder, Ablage im Fall-Ordner
+- **Projektcharts** – Zeitlinien und Fristen-Diagramme
+- **Bibliothek-Index** – durchsuchbares Verzeichnis aller Dokumente
+
+**Recherche (OSINT):**
+- **Leak-Prüfung** – sind deine eigenen Daten in Datenlecks? (nur eigene, passiv, Clearnet)
+- **Name-Recherche** – Personen/Firmen mit 2-Quellen-Verifikation
+- **Mail-Erreichbarkeit** – kann eine Domain E-Mails empfangen/versenden? (passiv via DNS)
+- **Website-Recon** – Domain-Analyse (Whois, DNS, SSL) mit Bericht
+- **Corporate Nexus** – Unternehmensverflechtungen (Handelsregister DE + 8 weitere Länder)
+
+---
+
+## 🛠️ Installation ohne Installer (manuell)
+
+Falls du lieber von Hand installierst:
+
+**Hermes:**
 ```bash
-# Variante A: als Plugin installieren
-hermes plugins install b3nb0x/F.E.E.---Fully-Examine-Everything
-
-# Variante B: Skills direkt ins Hermes-Skills-Verzeichnis klonen
 git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.hermes/skills/fee
-
-# Bestehendes Claude-Code-Setup importieren (übernimmt Plugins/Skills):
-hermes import-agent claude-code
 ```
 
-Danach stehen in Hermes die Slash-Commands `/recht`, `/urteil`, `/verfahren` und `/vorabcheck` zur Verfügung (Autocomplete via `/<Tab>`), und die 6 Rechts-Skills werden bei passenden Fragen automatisch herangezogen. Das F.E.E.-Memory (`memory/fee-memory.md`) integriert sich in das Hermes-Memory-Konzept (MEMORY.md/USER.md) – die Regeln aus `AGENTS.md` gelten agentenübergreifend.
-
-### Claude Code
-
+**Claude Code:**
 ```bash
-mkdir -p ~/.claude/plugins
 git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/.claude/plugins/fee
-# oder als Marketplace-Plugin:
-/plugin install b3nb0x/F.E.E.---Fully-Examine-Everything
 ```
 
-### llama.cpp / lokale Modelle (Nobara, Ubuntu, …)
-
-llama.cpp hat kein eigenes Plugin-System, aber einen OpenAI-kompatiblen Server. Kombiniere ihn mit Hermes (oder einem anderen Agenten), um F.E.E. auf dem eigenen, lokalen Modell zu nutzen:
+**llama.cpp / lokale Modelle:** llama.cpp hat kein Plugin-System, aber einen OpenAI-kompatiblen Server. Kombiniere ihn mit Hermes, um F.E.E. auf deinem eigenen, lokalen Modell zu nutzen:
 
 ```bash
-# 1. llama.cpp-Server starten (llama-server, OpenAI-kompatibel)
-./llama-server -m <modell>.gguf --port 8080
-
-# 2. Hermes installieren und lokalen Endpoint als Provider einrichten
-hermes model   # Custom/OpenAI-compatible: http://localhost:8080/v1
-
-# 3. F.E.E. installieren (siehe Abschnitt Hermes Agent oben)
+./llama-server -m <modell>.gguf --port 8080     # 1. llama.cpp-Server starten
+hermes model                                      # 2. Endpoint http://localhost:8080/v1 einrichten
+# 3. F.E.E. wie oben installieren
 ```
 
-Ohne Agenten-Framework kannst du F.E.E. auch direkt als Kontext laden – ohne Memory und automatische Skill-Auswahl:
-
-```bash
-cat AGENTS.md skills/*/SKILL.md > /tmp/fee-context.md
-./llama-cli -m <modell>.gguf --system-prompt-file /tmp/fee-context.md
-```
-
-### Codex / Cursor / OpenCode / generisch
-
+**Codex / Cursor / OpenCode / generisch:**
 ```bash
 git clone https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git ~/fee
 # AGENTS.md in dein Projekt kopieren oder referenzieren
 ```
 
-## Schnellstart
+---
 
-```
-/recht Kündigungsfrist bei Wohnung nach § 573c BGB
-/urteil BGH XII ZR 12/24 Mietrecht
-/verfahren Nachbar will Schadensersatz wegen Baumschnitts – welcher Rechtsweg?
-/vorabcheck Arbeitgeber zahlt Überstunden nicht, seit 3 Monaten
-```
+## 🔍 Das Quellen-Prinzip (warum F.E.E. zuverlässig antwortet)
 
-## Quellen-Prinzip
-
-F.E.E. priorisiert **amtliche und primäre Quellen**:
+F.E.E. zwingt den Agenten, **amtliche Quellen zu prüfen**, statt aus dem Gedächtnis zu raten:
 
 | Rang | Quelle | Zweck |
 |---|---|---|
 | 1 | `gesetze-im-internet.de` (Bundesjustizministerium) | amtlicher, aktueller Gesetzestext |
-| 2 | Buzer, dejure.org | Normenkontext, Synopsen, Verweisungen |
+| 2 | Buzer, dejure.org | Normenkontext, Änderungshistorie |
 | 3 | `bundesgerichtshof.de` | amtliche BGH-Entscheidungen |
-| 4 | Rechtsprechung der obersten Bundesgerichte (BVerwG, BFH, BAG, BSG, BVerfG) | je nach Gerichtsbarkeit |
+| 4 | BVerwG, BFH, BAG, BSG, BVerfG | je nach Gerichtsbarkeit |
 | 5 | EUR-Lex / curia.europa.eu | EU-Recht, EuGH |
 | 6 | openjur, dejure-Dokumente | Auffindbarkeit von Aktenzeichen |
 
-## Struktur
+**Feste Sicherheitsregeln („Instincts"), die immer gelten:**
+- Keine Aussage ohne Gesetzes- oder Urkunden-Fundstelle
+- Keine erfundenen Aktenzeichen – Unverifizierbares wird als solches gekennzeichnet
+- Fristen niemals als „sicher" – immer mit Warnhinweis, verbindliche Berechnung nur anwaltlich
+- Mandatstrennung: Informationen aus einem Fall fließen nie in einen anderen
+- Jede Antwort endet mit dem Haftungshinweis
+
+---
+
+## 📂 Repo-Struktur (für Entwickler)
 
 ```
 F.E.E.
-├── AGENTS.md              # Agenten-Verhaltensregeln (zentral)
-├── plugin.json            # Manifest (Claude-Code-Plugin / generisch)
-├── commands/              # Slash-Commands
-├── skills/                # Recherche- und Analyse-Skills
-├── knowledge/             # Referenz: Quellen, Verfahrensübersicht, Zitierweise
-├── memory/                # Memory-Template + Instincts
-└── security/              # Grenzen der Rechtsdienstleistung
+├── install.sh            # 1-Befehl-Installer (Distro- & Agent-Erkennung)
+├── AGENTS.md             # zentrale Agenten-Verhaltensregeln
+├── plugin.json           # Plugin-Manifest (17 Skills)
+├── commands/             # Slash-Commands (/fee, /recht, /urteil, /verfahren, /vorabcheck, /mandant)
+├── skills/               # 17 Skills (00–16)
+├── knowledge/            # Referenz: Rechtsquellen, Verfahrensübersicht, Zitierweise
+├── memory/               # Memory-Vorlagen, Instincts, Mandats-Registry
+└── security/             # Grenzen der Rechtsdienstleistung, Haftungshinweis-System
 ```
 
 ## Lizenz
