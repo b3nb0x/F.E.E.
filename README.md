@@ -4,7 +4,7 @@
   <img src="assets/banner.png" alt="F.E.E. – Paragraph gegen Richterhammer im epischen Showdown" width="720">
 </p>
 
-Rechts-Addon (Plugin) für KI-Agenten – inspiriert von [ECC](https://github.com/affaan-m/ECC), spezialisiert auf **deutsches Recht**: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten und Vorabberatung.
+Rechts-Addon (Plugin) für KI-Agenten – spezialisiert auf **deutsches Recht**: Gesetze, Rechtsprechung (u. a. BGH), Verfahrensarten und Vorabberatung.
 
 > ⚠️ **Wichtiger Hinweis:** F.E.E. ist ein Recherche- und Analyse-Werkzeug. Es ersetzt keine Rechtsberatung im Sinne des RDG. Alle Ausgaben sind unverbindliche Informationen und Orientierung – keine verbindliche Rechtsauskunft.
 
