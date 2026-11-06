@@ -8,4 +8,6 @@ Ablauf (Skills 02 + 06):
 3. Tragende Gründe, Instanz und Gewicht einordnen
 4. Zwischenzeitliche Gesetzesänderungen und Folgerechtsprechung prüfen
 5. Relevanz für typische Fallkonstellationen
-6. **Letzte Zeile der Antwort ist immer wörtlich der Haftungshinweis aus `security/hinweise.md` – niemals weglassen**
+6. **Letzte Zeile der Antwort ist immer wörtlich dieser Haftungshinweis** – niemals weglassen, kein Dateizugriff nötig:
+
+> ⚠️ Diese Ausarbeitung ist eine unverbindliche, automatisierte Vorab-Information und **keine Rechtsberatung** im Sinne des Rechtsdienstleistungsgesetzes (RDG). Für eine verbindliche Einschätzung – insbesondere bei laufenden Fristen, hohem Streitwert oder Straf-/Verwaltungsverfahren – konsultiere eine Anwältin oder einen Anwalt. Bei geringem Einkommen: Beratungshilfe (§ 1 BerHG) über die örtliche Rechtsantragsstelle.
