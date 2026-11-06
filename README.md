@@ -27,6 +27,7 @@ Rechts-Addon (Plugin) für KI-Agenten – spezialisiert auf **deutsches Recht**:
   - `13-corporate-nexus` – Unternehmensverflechtungs-Analyse (Handelsregister DE/AT/CH/UK/BE/NL/FR/ES/PL)
   - `14-mandatsverwaltung` – Multimandaten-Fähigkeit: getrennte Mandatsordner, zentrales Register, mandatsübergreifende Fristen-Sicht, strikte Mandatstrennung
   - `15-fee` – Universeller Einstieg mit Auto-Routing (`/fee`) – ordnet jede Anfrage selbst zu
+  - `16-dokumentenverarbeitung` – Dokumenten-Aufnahme: OCR/Textextraktion (PDF, Word, Excel, LibreOffice, Bilder), Ablage im Mandanten-Ordner (`eingang/` Originale, `dokumente/` Volltexte), Index-Pflege
 - **Commands** (direkt aufrufbar)
   - `/fee <anliegen>` – **Universeller Einstieg:** ordnet die Anfrage selbst zu und wählt den passenden Skill (Auto-Routing über alle 15 Skills)
   - `/recht <frage>` – Normrecherche mit Fundstellen
@@ -39,6 +40,25 @@ Rechts-Addon (Plugin) für KI-Agenten – spezialisiert auf **deutsches Recht**:
 - **Security** – RBAG/RDG-Grenzen, kein Rechtsrat, keine Fristenberechnung ohne Verifikation
 
 ## Installation
+
+### Ein Befehl (empfohlen – erkennt Distro & Agenten)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh
+```
+
+Der Installer (`install.sh`, reines POSIX-sh – läuft auf Ubuntu, Mint, Debian, Fedora, RHEL, Arch, Manjaro, openSUSE, Nobara):
+- **Distro-Erkennung** über `/etc/os-release` → passender Paketmanager (apt/dnf/zypper/pacman)
+- **Agent-Erkennung:** Hermes, Claude Code, Vibe, Codex, Cursor – installiert in alle gefundenen
+- **Mandanten-Ordner** anlegen (Standard `~/FEE-Mandate`, konfigurierbar via `--mandate-dir`)
+- Optionen: `--deps` (OCR-Werkzeuge: tesseract, poppler, libreoffice), `--update`, `--uninstall`, `--agent <name>`, `--list-agents`
+
+```bash
+# OCR-/Dokumenten-Werkzeuge nachinstallieren (Distro-abhängig):
+curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh -s -- --deps
+```
+
+### Manuell
 
 > Konkrete URL: `https://github.com/b3nb0x/F.E.E.---Fully-Examine-Everything.git`
 
