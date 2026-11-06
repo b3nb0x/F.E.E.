@@ -49,7 +49,7 @@ Ziel: Jedes Dokument landet im richtigen Mandats-Ordner, als Original **und** al
 Benötigt: `tesseract` (+ `deu`-Sprachpaket), `poppler-utils` (pdftotext/pdftoppm), `libreoffice`. Installation per Distro über den F.E.E.-Installer:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E.---Fully-Examine-Everything/main/install.sh | sh -s -- --deps
+curl -fsSL https://raw.githubusercontent.com/b3nb0x/F.E.E./main/install.sh | sh -s -- --deps
 ```
 
 (Installer erkennt Distro und wählt apt/dnf/zypper/pacman.)
