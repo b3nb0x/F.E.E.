@@ -19,7 +19,7 @@
 | **Plugin / Addon** | Ein installierbares Paket, das dem Agenten neue Fähigkeiten (Skills, Befehle) hinzufügt. **F.E.E. ist genau das: ein Rechts-Plugin.** |
 | **Mandat** | Ein einzelner Fall/Auftrag (z. B. „Kündigungsschutzklage Herr Mustermann"). F.E.E. verwaltet mehrere Mandate getrennt – wie Aktenordner in einer Kanzlei. |
 
-**Concrete gesagt:** Du installierst F.E.E. einmal in deinen Agenten – und ab dann kannst du den Agenten fragen: *„Wie ist die Kündigungsfrist bei meiner Wohnung?"* oder *„Analysiere diese Kündigung!"* – und er antwortet wie ein gut vorbereiteter juristischer Assistent: mit Gesetzeszitaten, Urteilen, Fristen-Warnungen und klaren nächsten Schritten.
+**Konkret gesagt:** Du installierst F.E.E. einmal in deinen Agenten – und ab dann kannst du den Agenten fragen: *„Wie ist die Kündigungsfrist bei meiner Wohnung?"* oder *„Analysiere diese Kündigung!"* – und er antwortet wie ein gut vorbereiteter juristischer Assistent: mit Gesetzeszitaten, Urteilen, Fristen-Warnungen und klaren nächsten Schritten.
 
 ---
 
