@@ -13,6 +13,7 @@
 #   --update        Bestehende Installation aktualisieren
 #   --uninstall     F.E.E. entfernen
 #   --list-agents   Nur erkannte Agenten anzeigen
+#   --install-agent <name>  Agent installieren, wenn keiner gefunden wurde (Menue)
 #   -h | --help     Diese Hilfe
 
 set -eu
@@ -105,6 +106,72 @@ fetch_repo() {
     fi
 }
 
+
+install_agent() {
+    # Installiert einen Agenten, falls keiner gefunden wurde (Nutzer-Auswahl).
+    AGENT="$1"
+    echo ">> Installiere Agent: $AGENT"
+    case "$AGENT" in
+        hermes)
+            echo "   Offizieller Hermes-Installer (Nous Research):"
+            if command -v curl >/dev/null 2>&1; then
+                sh -c 'curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash' || \
+                    echo "!! Installation fehlgeschlagen – bitte manuell: https://github.com/NousResearch/hermes-agent"
+            else
+                echo "!! curl nicht gefunden – bitte manuell installieren."
+            fi
+            ;;
+        claude)
+            if command -v npm >/dev/null 2>&1; then
+                npm install -g @anthropic-ai/claude-code || \
+                    echo "!! Installation fehlgeschlagen – bitte manuell: https://claude.com/claude-code"
+            else
+                echo "!! npm nicht gefunden (Node.js noetig) – bitte manuell: https://claude.com/claude-code"
+            fi
+            ;;
+        codex)
+            if command -v npm >/dev/null 2>&1; then
+                npm install -g @openai/codex || \
+                    echo "!! Installation fehlgeschlagen – bitte manuell: https://developers.openai.com/codex/cli"
+            else
+                echo "!! npm nicht gefunden – bitte manuell installieren."
+            fi
+            ;;
+        vibe)
+            echo "   Mistral Vibe Code: siehe https://docs.mistral.ai/vibe/code"
+            echo "   (Installation gemaess aktueller Mistral-Dokumentation; danach F.E.E.-Installer erneut ausfuehren)"
+            ;;
+        cursor)
+            echo "   Cursor ist eine Desktop-App: https://cursor.com/download"
+            echo "   Nach der Installation F.E.E.-Installer erneut ausfuehren."
+            ;;
+    esac
+}
+
+choose_agent() {
+    # Interaktive Auswahl, wenn kein Agent erkannt wurde.
+    echo ">> Kein Agent gefunden. Welchen moechtest du installieren?"
+    echo "   1) Hermes Agent (Nous Research)"
+    echo "   2) Claude Code (Anthropic)"
+    echo "   3) Codex CLI (OpenAI)"
+    echo "   4) Mistral Vibe Code"
+    echo "   5) Cursor (Desktop-App)"
+    printf " Auswahl [1-5]: "
+    if [ -r /dev/tty ]; then
+        read CHOICE < /dev/tty
+    else
+        read CHOICE
+    fi
+    case "$CHOICE" in
+        1) echo "hermes" ;;
+        2) echo "claude" ;;
+        3) echo "codex" ;;
+        4) echo "vibe" ;;
+        5) echo "cursor" ;;
+        *) echo "" ;;
+    esac
+}
+
 # ---------------------------------------------------------------- Installation
 
 install_to_agent() {
@@ -140,6 +207,10 @@ EOF
 }
 
 do_install() {
+    if [ -n "${AGENT_TO_INSTALL:-}" ]; then
+        install_agent "$AGENT_TO_INSTALL"
+        WANT_AGENT="$AGENT_TO_INSTALL"
+    fi
     fetch_repo
     if [ "$WANT_AGENT" = "all" ]; then
         TARGETS="hermes claude vibe codex cursor"
@@ -148,9 +219,20 @@ do_install() {
     else
         TARGETS="$FOUND"
         if [ -z "$TARGETS" ]; then
-            echo "!! Kein Agent erkannt (Hermes, Claude Code, Vibe, Codex, Cursor)."
-            echo "   Installation mit: sh install.sh --agent <name>"
-            exit 1
+            echo ">> Kein Agent erkannt (Hermes, Claude Code, Vibe, Codex, Cursor)."
+            CHOSEN="$(choose_agent)"
+            if [ -z "$CHOSEN" ]; then
+                echo "!! Keine Auswahl. Installation mit: sh install.sh --agent <name>"
+                exit 1
+            fi
+            install_agent "$CHOSEN"
+            detect_agents
+            TARGETS="$(echo "$FOUND" | tr -s ' ')"
+            if [ -z "$TARGETS" ]; then
+                echo ">> Agent wurde eingerichtet, aber noch nicht erkannt."
+                echo "   ggf. neue Shell/Session noetig – installiere F.E.E. vorerst direkt:"
+                TARGETS="$CHOSEN"
+            fi
         fi
     fi
     for A in $TARGETS; do
@@ -200,7 +282,8 @@ while [ $# -gt 0 ]; do
         --mandate-dir) MANDATE_DIR="$2"; shift 2 ;;
         --update)      ACTION="update"; shift ;;
         --uninstall)   ACTION="uninstall"; shift ;;
-        --list-agents) ACTION="list"; shift ;;
+        --install-agent) AGENT_TO_INSTALL="$2"; shift 2 ;;
+        --list-agents)    ACTION="list"; shift ;;
         -h|--help)     sed -n '2,15p' "$0"; exit 0 ;;
         *) echo "Unbekannte Option: $1 (siehe --help)" >&2; exit 1 ;;
     esac
